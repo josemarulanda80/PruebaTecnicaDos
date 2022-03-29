@@ -9,7 +9,7 @@ import { Users } from '../interfaces/list.item.types';
 export class UsersService {
   constructor(private http: HttpClient ) { 
   }
-  getUsers():Observable<Users>{
-     return this.http.get<Users>('https://jsonplaceholder.typicode.com/users')
+  getUsers():Observable<Users[]>{
+     return this.http.get<Users[]>('https://jsonplaceholder.typicode.com/users')
   }
 }

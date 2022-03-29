@@ -7,15 +7,12 @@ import { MaterialModule } from "../common/material/material.module";
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeSideBarComponent } from './home-side-bar/home-side-bar.component';
 import { HomeComponent } from './home.component';
-import { ListUserComponent } from './list-user/list-user.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     HomeSideBarComponent,
-    ListUserComponent,
-  
   ],
   exports: [
     HomeComponent,
@@ -28,7 +25,8 @@ import { ListUserComponent } from './list-user/list-user.component';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+
   ],
   providers: [
     CdkStepper

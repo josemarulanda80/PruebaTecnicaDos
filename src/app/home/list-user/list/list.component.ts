@@ -14,7 +14,7 @@ import { User } from 'src/app/interfaces/user.type';
 export class ListComponent implements OnInit {
   error:boolean = false;
   ELEMENT_DATA!:Users[];
-  displayedColumns: string[] = ['Id', 'Name', 'Username', 'Email','Phone'];
+  displayedColumns: string[] = ['Id', 'Name', 'Username', 'Email','Phone','Editar'];
   dataSource = new MatTableDataSource<Users>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

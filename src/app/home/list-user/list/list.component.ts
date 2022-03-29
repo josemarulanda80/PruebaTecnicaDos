@@ -12,8 +12,9 @@ import { User } from 'src/app/interfaces/user.type';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  error:boolean = false;
   ELEMENT_DATA!:Users[];
-  displayedColumns: string[] = ['Id', 'Name', 'Username', 'Email'];
+  displayedColumns: string[] = ['Id', 'Name', 'Username', 'Email','Phone'];
   dataSource = new MatTableDataSource<Users>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -31,7 +32,10 @@ export class ListComponent implements OnInit {
   }
 
   public getAllUsers(){
-    this.userService.getUsers().subscribe(report => this.dataSource.data=report as Users[])
+    this.userService.getUsers().subscribe(report => this.dataSource.data=report as Users[]),err=>{
+      this.error==true;
+      console.log(err);
+    }
   }
   
 }

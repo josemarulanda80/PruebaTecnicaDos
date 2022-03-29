@@ -7,13 +7,20 @@ import { MaterialModule } from "../common/material/material.module";
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeSideBarComponent } from './home-side-bar/home-side-bar.component';
 import { HomeComponent } from './home.component';
+import { ListUserComponent } from './list-user/list-user.component';
+
 
 @NgModule({
   declarations: [
     HomeComponent,
-    HomeSideBarComponent
+    HomeSideBarComponent,
+    ListUserComponent,
+  
   ],
   exports: [
+    HomeComponent,
+    HomeSideBarComponent,
+
   ],
   imports: [
     CommonModule,

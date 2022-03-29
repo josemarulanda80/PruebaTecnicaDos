@@ -14,6 +14,11 @@ const routes: Routes = [
         data: { roles: ['dashboard_access'], preload: true}
       },
       {
+        path:'list',
+        loadChildren: ()=>import('./list-user/list-user.module').then((m) => m.ListUserModule)
+
+      },
+      {
         path: "**",
         redirectTo: "dashboard",
         pathMatch: "full"

@@ -37,7 +37,11 @@ export class HomeComponent implements OnInit {
    * Depending on the user role set the available modules on menuList
    */
   public initSidebar(){
-    this.menusList.push({icono: "Dashboard@PYP.png", nombre: "Dashboard", ruta: '/home/dashboard'});
+    this.menusList.push(
+      {icono: "Dashboard@PYP.png", nombre: "Dashboard", ruta: '/home/dashboard'},
+      {icono: "Dashboard@PYP.png", nombre: "Lista", ruta: '/home/list'} 
+      
+      );
   }
 
   public async logout() {

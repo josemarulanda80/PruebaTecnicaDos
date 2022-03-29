@@ -21,6 +21,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterModule } from '@angular/router';
 import { NgxLoadingModule } from 'ngx-loading';
 import { HomeModule } from '../home.module';
 import { DashboardBoxComponent } from './dashboard-box/dashboard-box.component';
@@ -58,7 +59,8 @@ import { DashboardComponent } from './dashboard.component';
         MatTableModule,
         MatSortModule,
         NgxLoadingModule,
-        MatChipsModule
+        MatChipsModule,
+        RouterModule
     ]
 })
 export class DashboardModule { }

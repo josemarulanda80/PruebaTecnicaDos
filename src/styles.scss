@@ -106,3 +106,58 @@ select:-webkit-autofill:focus {
 mat-icon {
   pointer-events: none;
 }
+
+//Global Buttons
+.button-exit {
+  background-image: linear-gradient(-90deg, #261172, #03317a);
+  box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.55);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 11px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+.button-add {
+  background-image: linear-gradient(-90deg, #550047, #68037a);
+  box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.55);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 11px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+.button-delete-space {
+  background-image: linear-gradient(-90deg, #550047, #68037a);
+  box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.55);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 11px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 5%;
+  cursor: pointer;
+}
+.button-edit {
+  background-image: linear-gradient(-90deg, #035749, #039182);
+  box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.55);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 11px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}

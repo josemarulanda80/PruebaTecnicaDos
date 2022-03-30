@@ -69,30 +69,7 @@ input {
  }
 
 /* ---------- BUTTON ---------- */
-.button-exit {
-  background-color: #3c15e7; /* Green */
-  border: none;
-  border-radius:5px ;
-  color: white;
-  padding: 11px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  cursor: pointer;
-}
-.button-add {
-  background-color: #f51212; /* Green */
-  border: none;
-  border-radius:5px ;
-  color: white;
-  padding: 11px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  cursor: pointer;
-}
+
 
 .button {
   background-color: #33cc77;
@@ -135,7 +112,8 @@ input {
 }
 
 .add__header {
-  background-color: #f95252;
+  background-image: linear-gradient(-90deg, #000055, #03397a);
+  box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.55);
   border-top-left-radius: 1.25em;
   border-top-right-radius: 1.25em;
   color: #fff;
@@ -155,7 +133,8 @@ input {
 }
 
 .add__form {
-  background-color: #fff;
+  background-image: linear-gradient(-90deg, #000024, #00234e);
+  box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.55);
   border-bottom-left-radius: 1.25em;
   border-bottom-right-radius: 1.25em;
   color: #777;

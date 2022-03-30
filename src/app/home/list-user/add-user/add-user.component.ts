@@ -45,12 +45,12 @@ export class AddUserComponent implements OnInit {
    if(this.title =='Agregar usuario'){
   
     this.userServices.saveUSer(newUser).subscribe(() =>
-      {console.log('Usuario Creado'),this.userServices.getUsers(),this.exit()},
+      {console.log('Usuario Creado'),this.userServices.getUsers().subscribe(),this.exit()},
       error => {console.log('oops', error)});
    }else{
      this.id=this.editUser.id.toString();
      this.userServices.editUSer(newUser,this.id).subscribe(()=>
-     {console.log('Usuario Editado'),this.userServices.getUsers(),this.exit()},
+     {console.log('Usuario Editado'),this.userServices.getUsers().subscribe(),this.exit()},
 
      );
    }

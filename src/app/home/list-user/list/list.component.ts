@@ -24,7 +24,7 @@ export class ListComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor(private userService: UsersService, private renderer: Renderer2) {
+  constructor(private userService: UsersService) {
     this.getAllUsers()
   }
 
@@ -38,10 +38,18 @@ export class ListComponent implements OnInit {
       console.log(err);
     }
   }
-  edit(j:Users) {
+  edit(userExist:Users) {
    
-    console.log(j)
-    this.editUser=j
+    console.log(userExist)
+    this.editUser=userExist
+
+  }
+  deleteUser(userExist:Users){
+    let idUser=userExist.id.toString()
+    this.userService.deleteUser(idUser).subscribe(()=>{
+      console.log('Usuario eliminado'), this.userService.getUsers().subscribe()
+    },
+    error=>{console.log(error), this.error=true})
 
   }
 

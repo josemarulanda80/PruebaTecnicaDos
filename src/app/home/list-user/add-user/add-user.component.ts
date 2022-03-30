@@ -31,33 +31,28 @@ export class AddUserComponent implements OnInit {
   }
   showModel() {
     this.show = true;
-    console.log(this.editUser)
   }
   hideModel() {
     this.show = false;
   }
   createOrEditUser() {
-    console.log(this.user)
     const newUser: Users = {
       email: this.user.get("email")?.value,
       name: this.user.get("name")?.value,
       username: this.user.get("username")?.value,
       phone: this.user.get('phone')?.value
     };
-   if(this.title=='Agregar usuario'){
+   if(this.title =='Agregar usuario'){
   
     this.userServices.saveUSer(newUser).subscribe(() =>
-      console.log('Usuario Creado'),
-      error => console.log('oops', error));
-    this.exit()
+      {console.log('Usuario Creado'),this.userServices.getUsers(),this.exit()},
+      error => {console.log('oops', error)});
    }else{
      this.id=this.editUser.id.toString();
      this.userServices.editUSer(newUser,this.id).subscribe(()=>
-     console.log('Usuario Editado'),
+     {console.log('Usuario Editado'),this.userServices.getUsers(),this.exit()},
 
      );
-     console.log(this.id)
-     this.exit()
    }
   }
   exit() {

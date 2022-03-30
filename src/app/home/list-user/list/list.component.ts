@@ -3,8 +3,6 @@ import { Users } from 'src/app/interfaces/list.item.types';
 import { UsersService } from 'src/app/services/users.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { User } from 'src/app/interfaces/user.type';
-
 
 @Component({
   selector: 'app-list',
@@ -15,8 +13,7 @@ export class ListComponent implements OnInit {
   @ViewChild("myModal") myModal: ElementRef;
 
   error: boolean = false;
-  title: string = 'Agregar usuario'
-  editUser:Users
+  editUser:Users;
   ELEMENT_DATA!: Users[];
   displayedColumns: string[] = ['Id', 'Name', 'Username', 'Email', 'Phone', 'Editar'];
   dataSource = new MatTableDataSource<Users>(this.ELEMENT_DATA);
@@ -42,7 +39,7 @@ export class ListComponent implements OnInit {
     }
   }
   edit(j:Users) {
-    this.title = "Editar usuario"
+   
     console.log(j)
     this.editUser=j
 

@@ -1,4 +1,6 @@
-
+.example-mat-elevation-z8{
+  background-color: #00234e;
+}
 .dashboard-wraper {
     height: 11vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 11);
@@ -21,4 +23,11 @@
   }
   .container{
     padding: 5px;
+    background-image: linear-gradient(-90deg, #000024, #00234e);
+    box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.55);
+    height: calc(var(--vh, 1vh) * 11);
+  }
+  .example-mat-elevation-z8{
+    padding: 0;
+    margin: 0;
   }

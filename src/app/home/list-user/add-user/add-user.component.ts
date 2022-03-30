@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-user',
@@ -14,10 +14,10 @@ export class AddUserComponent implements OnInit {
   constructor() { }
 createForm(){
   this.user=new FormGroup({
-    email:new FormControl(""),
-    name:new FormControl(""),
-    username:new FormControl(""),
-    phone:new FormControl(""),
+    email:new FormControl("",[Validators.required, Validators.email]),
+    name:new FormControl("",Validators.required),
+    username:new FormControl("",Validators.required),
+    phone:new FormControl("",Validators.required),
 
   })
 }
@@ -30,5 +30,12 @@ showModel(){
   hideModel(){
     this.show=false;
   }
-
+  createUser(){
+    console.log(this.user)
+  }
+exit(){
+  this.user.reset()
+  this.show=false;
+ 
+}
 }

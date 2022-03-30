@@ -5,34 +5,36 @@
       <header class="add__header">
         <h2>{{title}}</h2>
       </header>
-      <form [formGroup]="user"  action="#" class="add__form" method="POST">
+      <form [formGroup]="user"  action="#" class="add__form" (ngSubmit)="createUser()">
         <div>
           <label for="email">Email</label>
           <input
             type="email"
             formControlName="email"
-            name="email"
             placeholder="mail@address.com"
           />
+          <span *ngIf="user.get('email').hasError('required') && user.get('email').touched" class="text-red">Error al ingresar email</span>
         </div>
-
+        
         <div>
           <label>Nombre</label>
           <input
             type="text"
-            formControl="name"
+            formControlName="name"
             name="name"
             placeholder="Nombre"
           />
+          <span *ngIf="user.get('name').hasError('required') && user.get('name').touched" class="text-red">Error al ingresar email</span>
         </div>
         <div>
           <label>Username</label>
           <input
             type="text"
-            formControlName="userName"
+            formControlName="username"
             name="username"
             placeholder="Username"
           />
+          <span *ngIf="user.get('username').hasError('required') && user.get('username').touched" class="text-red">Error al ingresar email</span>
         </div>
         <div>
           <label >Telefono</label>
@@ -42,12 +44,13 @@
             name="phone"
             placeholder="Telefono"
           />
+          <span *ngIf="user.get('phone').hasError('required') && user.get('phone').touched" class="text-red">Error al ingresar email</span>
         </div>
 
 
         <div class="container">
-          <button class="button-add" (click)="show=false">Salir</button>
-          <input   class="button-exit" type="submit" value="Agregar" />
+          <button class="button-add"  (click)="exit()">Salir</button>
+          <button   class="button-exit" [disabled]="user.invalid" type="submit">Agregar</button>
         </div>
 
       

@@ -4,7 +4,7 @@ export interface Users {
     username: string;
     email:    string;
     address?:  Address;
-    phone:    string;
+    phone:    string | number;
     website?:  string;
     company?:  Company;
 }

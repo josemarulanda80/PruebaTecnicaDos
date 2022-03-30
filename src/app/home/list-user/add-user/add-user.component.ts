@@ -41,7 +41,8 @@ export class AddUserComponent implements OnInit {
       phone: this.user.get('phone')?.value
     };
     this.userServices.saveUSer(newUser).subscribe(data =>
-      console.log('Información enviada'));
+      console.log('Información enviada'),
+      error => console.log('oops', error));
     this.exit()
   }
   exit() {

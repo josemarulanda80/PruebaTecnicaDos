@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Users } from 'src/app/interfaces/list.item.types';
 import { UsersService } from 'src/app/services/users.service';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { User } from 'src/app/interfaces/user.type';
 
 
@@ -12,9 +12,12 @@ import { User } from 'src/app/interfaces/user.type';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  error:boolean = false;
-  ELEMENT_DATA!:Users[];
-  displayedColumns: string[] = ['Id', 'Name', 'Username', 'Email','Phone','Editar'];
+  @ViewChild("myModal") myModal: ElementRef;
+
+  error: boolean = false;
+  title: string = 'Agrergar Usuario'
+  ELEMENT_DATA!: Users[];
+  displayedColumns: string[] = ['Id', 'Name', 'Username', 'Email', 'Phone', 'Editar'];
   dataSource = new MatTableDataSource<Users>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -23,21 +26,26 @@ export class ListComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor(private userService: UsersService) {
+  constructor(private userService: UsersService, private renderer: Renderer2) {
     this.getAllUsers()
-   }
+  }
 
   ngOnInit() {
     this.getAllUsers()
   }
 
-  public getAllUsers(){
-    this.userService.getUsers().subscribe(report => this.dataSource.data=report as Users[]),err=>{
-      this.error==true;
+  public getAllUsers() {
+    this.userService.getUsers().subscribe(report => this.dataSource.data = report as Users[]), err => {
+      this.error == true;
       console.log(err);
     }
   }
-  
+  edit(j:number) {
+    this.title = "Editar usuario"
+    console.log(j)
+
+  }
+
 }
 
 

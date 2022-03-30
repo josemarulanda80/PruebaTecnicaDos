@@ -11,6 +11,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class AddUserComponent implements OnInit {
   @Input() title: string = ''
+  @Input() editUser: Users;
   user: FormGroup;
 
   public show = false;
@@ -28,6 +29,7 @@ export class AddUserComponent implements OnInit {
   }
   showModel() {
     this.show = true;
+    console.log(this.editUser)
   }
   hideModel() {
     this.show = false;
@@ -46,6 +48,8 @@ export class AddUserComponent implements OnInit {
     this.exit()
   }
   exit() {
+    console.log("hola");
+    console.log(this.editUser)
     this.user.reset()
     this.show = false;
 

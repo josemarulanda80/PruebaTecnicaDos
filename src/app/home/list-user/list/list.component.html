@@ -2,7 +2,7 @@
   <button (click)="modal.show=true" class="button-add">Agregar</button>
 </div>
 <app-add-user [title]="this.title"  #modal></app-add-user>
-<app-add-user [title]="'Editar Usuario usuario'" #modalEdit></app-add-user>
+<app-add-user [title]="'Editar Usuario usuario'" [editUser]="this.editUser"  #modalEdit></app-add-user>
 <div class="example-mat-elevation-z8">
     <table mat-table [dataSource]="dataSource">
 
@@ -36,7 +36,7 @@
       <ng-container matColumnDef="Editar">
         <th mat-header-cell *matHeaderCellDef> <b>Editar</b> </th>
         <td mat-cell *matCellDef="let element">
-          <button class="button-edit"   (click)="modalEdit.show=true" (click)="edit(element)"  focusable="false">
+          <button class="button-edit"   (click)="edit(element)" (click)="modalEdit.show=true"   focusable="false">
             Editar
           </button>
         </td>

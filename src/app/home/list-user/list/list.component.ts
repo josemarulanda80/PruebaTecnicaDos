@@ -16,6 +16,7 @@ export class ListComponent implements OnInit {
 
   error: boolean = false;
   title: string = 'Agrergar Usuario'
+  editUser:Users
   ELEMENT_DATA!: Users[];
   displayedColumns: string[] = ['Id', 'Name', 'Username', 'Email', 'Phone', 'Editar'];
   dataSource = new MatTableDataSource<Users>(this.ELEMENT_DATA);
@@ -40,9 +41,10 @@ export class ListComponent implements OnInit {
       console.log(err);
     }
   }
-  edit(j:number) {
+  edit(j:Users) {
     this.title = "Editar usuario"
     console.log(j)
+    this.editUser=j
 
   }
 

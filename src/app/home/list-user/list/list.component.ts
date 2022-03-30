@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   @ViewChild("myModal") myModal: ElementRef;
 
   error: boolean = false;
-  title: string = 'Agrergar Usuario'
+  title: string = 'Agregar Usuario'
   editUser:Users
   ELEMENT_DATA!: Users[];
   displayedColumns: string[] = ['Id', 'Name', 'Username', 'Email', 'Phone', 'Editar'];

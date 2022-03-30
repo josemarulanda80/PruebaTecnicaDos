@@ -11,8 +11,9 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class AddUserComponent implements OnInit {
   @Input() title: string = ''
-  @Input() editUser: Users;
-  user: FormGroup;
+  @Input() editUser: Users
+  user: FormGroup
+  id:number
 
   public show = false;
   constructor(private userServices: UsersService) { }
@@ -49,9 +50,20 @@ export class AddUserComponent implements OnInit {
   }
   exit() {
     console.log("hola");
-    console.log(this.editUser)
+    console.log(this.editUser.id)
     this.user.reset()
     this.show = false;
 
   }
+
+
+  //Función con la que trate llamar la información del usuario a editar pero no me funciona, la alternativa que usaria es implementar un store(ngrx) para tener un mejor manejo del flujo información
+  // showInformationUserEdit(){
+  //   this.user.patchValue({
+  //     email: this.user.get("email")?.value,
+  //     name: this.user.get("name")?.value,
+  //     username: this.user.get("username")?.value,
+  //     phone: this.user.get('phone')?.value
+  //   })
+  // }
 }

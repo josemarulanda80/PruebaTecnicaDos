@@ -5,7 +5,7 @@
       <header class="add__header">
         <h2>{{title}}</h2>
       </header>
-      <form [formGroup]="user"  action="#" class="add__form" (ngSubmit)="createUser()">
+      <form [formGroup]="user" class="add__form" (ngSubmit)="createUser()">
         <div>
           <label for="email">Email</label>
           <input
@@ -50,7 +50,7 @@
 
         <div class="container">
           <button class="button-add"  (click)="exit()">Salir</button>
-          <button   class="button-exit" [disabled]="user.invalid" type="submit">Agregar</button>
+          <button   class="button-exit" [disabled]="user.invalid" type="submit">Aceptar</button>
         </div>
 
       

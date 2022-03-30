@@ -5,12 +5,12 @@
       <header class="add__header">
         <h2>{{title}}</h2>
       </header>
-      <form action="#" class="add__form" method="POST">
+      <form [formGroup]="user"  action="#" class="add__form" method="POST">
         <div>
           <label for="email">Email</label>
           <input
             type="email"
-            id="email"
+            formControlName="email"
             name="email"
             placeholder="mail@address.com"
           />
@@ -20,7 +20,7 @@
           <label>Nombre</label>
           <input
             type="text"
-            id="name"
+            formControl="name"
             name="name"
             placeholder="Nombre"
           />
@@ -29,7 +29,7 @@
           <label>Username</label>
           <input
             type="text"
-            id="username"
+            formControlName="userName"
             name="username"
             placeholder="Username"
           />
@@ -38,7 +38,7 @@
           <label >Telefono</label>
           <input
             type="number"
-            id="phone"
+            formControlName="phone"
             name="phone"
             placeholder="Telefono"
           />

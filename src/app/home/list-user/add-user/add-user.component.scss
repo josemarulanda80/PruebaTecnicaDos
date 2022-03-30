@@ -69,7 +69,7 @@ input {
  }
 
 /* ---------- BUTTON ---------- */
-.button-add {
+.button-exit {
   background-color: #3c15e7; /* Green */
   border: none;
   border-radius:5px ;
@@ -129,12 +129,12 @@ input {
   width: 1em;
 }
 
-/* ---------- LOGIN ---------- */
-.login {
+/* ---------- add ---------- */
+.add {
   width: 400px;
 }
 
-.login__header {
+.add__header {
   background-color: #f95252;
   border-top-left-radius: 1.25em;
   border-top-right-radius: 1.25em;
@@ -142,19 +142,19 @@ input {
   padding: 1.25em 1.625em;
 }
 
-.login__header :first-child {
+.add__header :first-child {
   margin-top: 0;
 }
 
-.login__header :last-child {
+.add__header :last-child {
   margin-bottom: 0;
 }
 
-.login h2 .icon {
+.add h2 .icon {
   margin-right: 14px;
 }
 
-.login__form {
+.add__form {
   background-color: #fff;
   border-bottom-left-radius: 1.25em;
   border-bottom-right-radius: 1.25em;
@@ -164,12 +164,13 @@ input {
   padding: 1.25em 1.625em;
 }
 
-.login input {
+.add input {
   border-radius: 0.1875em;
 }
 
-.login input[type="email"],
-.login input[type="password"] {
+.add input[type="email"],
+.add input[type="number"],
+.add input[type="text"] {
   background-color: #eee;
   color: #777;
   padding: 0.25em 0.625em;

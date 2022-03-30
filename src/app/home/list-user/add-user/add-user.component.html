@@ -1,17 +1,60 @@
 <ng-container *ngIf="show">
+ <div class="align">
   <div class="modalc">
-    <div class="modalc-content">
-      <div class="modalc-header">
-        <h4 class="modalc-tilte">{{ title }}</h4>
-        <ng-template [ngTemplateOutlet]="close"></ng-template>
-        <div class="modalc-container">
-          <ng-content></ng-content>
+    <div class="login">
+      <header class="login__header">
+        <h2>{{title}}</h2>
+      </header>
+      <form action="#" class="login__form" method="POST">
+        <div>
+          <label for="email"></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="mail@address.com"
+          />
         </div>
-      </div>
-    </div>
-  </div>
-</ng-container>
 
-<ng-template #close>
-  <button (click)="show = false">Salir</button>
-</ng-template>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="password"
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="password"
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="password"
+          />
+        </div>
+
+
+        <div class="container">
+          <button class="button-add" (click)="show=false">Salir</button>
+          <input   class="button-add" type="submit" value="Agregar" />
+        </div>
+
+      
+      </form>
+    </div>
+
+    <div class="modalc-container"></div>
+  </div>
+ </div>
+</ng-container>

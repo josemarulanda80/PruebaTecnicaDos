@@ -19,7 +19,7 @@ export class UsersService {
     return this.http.post<Users>(this.url,user)
   }
 
-  editUSer(user:Users,id:any):Observable<Users>{
+  editUSer(user:Users,id:string):Observable<Users>{
     return this.http.put<Users>(this.url+id,user)
   }
 }

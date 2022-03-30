@@ -10,10 +10,10 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./add-user.component.scss']
 })
 export class AddUserComponent implements OnInit {
-  @Input() title: string = ''
-  @Input() editUser: Users
-  user: FormGroup
-  id:number
+  @Input() title: string = '';
+  @Input() editUser: Users;
+  user: FormGroup;
+  id:number | string;
 
   public show = false;
   constructor(private userServices: UsersService) { }
@@ -43,14 +43,18 @@ export class AddUserComponent implements OnInit {
       username: this.user.get("username")?.value,
       phone: this.user.get('phone')?.value
     };
+   if(this.title=='Agregar usuario'){
+  
     this.userServices.saveUSer(newUser).subscribe(data =>
       console.log('Usuario Creado'),
       error => console.log('oops', error));
     this.exit()
+   }else{
+     this.id=this.editUser.id.toString()
+     console.log(this.id)
+   }
   }
   exit() {
-    console.log("hola");
-    console.log(this.editUser.id)
     this.user.reset()
     this.show = false;
 

@@ -35,7 +35,7 @@ export class AddUserComponent implements OnInit {
   hideModel() {
     this.show = false;
   }
-  createUser() {
+  createOrEditUser() {
     console.log(this.user)
     const newUser: Users = {
       email: this.user.get("email")?.value,
@@ -44,7 +44,7 @@ export class AddUserComponent implements OnInit {
       phone: this.user.get('phone')?.value
     };
     this.userServices.saveUSer(newUser).subscribe(data =>
-      console.log('Información enviada'),
+      console.log('Usuario Creado'),
       error => console.log('oops', error));
     this.exit()
   }

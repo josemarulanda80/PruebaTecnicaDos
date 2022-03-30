@@ -5,7 +5,7 @@
       <header class="add__header">
         <h2>{{title}}</h2>
       </header>
-      <form [formGroup]="user" class="add__form" (ngSubmit)="createUser()">
+      <form [formGroup]="user" class="add__form" (ngSubmit)="createOrEditUser()">
         <div>
           <label for="email">Email</label>
           <input

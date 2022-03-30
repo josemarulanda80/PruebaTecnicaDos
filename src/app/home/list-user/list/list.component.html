@@ -1,7 +1,7 @@
 <div class="container">
-  <button class="button-add">Agregar</button>
+  <button (click)="modal.show=true" class="button-add">Agregar</button>
 </div>
-<app-add-user></app-add-user>
+<app-add-user [title]="'Nuevo usuario'"  #modal> Hola</app-add-user>
 <div class="example-mat-elevation-z8">
     <table mat-table [dataSource]="dataSource">
 

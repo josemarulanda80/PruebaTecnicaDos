@@ -1,3 +1,4 @@
+import { CdkObserveContent } from '@angular/cdk/observers';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
@@ -45,13 +46,18 @@ export class AddUserComponent implements OnInit {
     };
    if(this.title=='Agregar usuario'){
   
-    this.userServices.saveUSer(newUser).subscribe(data =>
+    this.userServices.saveUSer(newUser).subscribe(() =>
       console.log('Usuario Creado'),
       error => console.log('oops', error));
     this.exit()
    }else{
-     this.id=this.editUser.id.toString()
+     this.id=this.editUser.id.toString();
+     this.userServices.editUSer(newUser,this.id).subscribe(()=>
+     console.log('Usuario Editado'),
+
+     );
      console.log(this.id)
+     this.exit()
    }
   }
   exit() {

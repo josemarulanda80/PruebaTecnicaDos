@@ -20,6 +20,6 @@ export class UsersService {
   }
 
   editUSer(user:Users,id:string):Observable<Users>{
-    return this.http.put<Users>(this.url+id,user)
+    return this.http.put<Users>(this.url+'/'+id,user)
   }
 }

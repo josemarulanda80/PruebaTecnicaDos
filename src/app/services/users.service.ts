@@ -22,4 +22,7 @@ export class UsersService {
   editUSer(user:Users,id:string):Observable<Users>{
     return this.http.put<Users>(this.url+'/'+id,user)
   }
+  deleteUser(id:string):Observable<string>{
+    return this.http.delete<string>(this.url+'/'+id)
+  }
 }

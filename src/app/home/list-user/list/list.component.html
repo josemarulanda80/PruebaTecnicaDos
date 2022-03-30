@@ -1,7 +1,8 @@
-<div class="container">
-  <button (click)="modal.show=true" class="button-add">Agregar</button>
-</div>
+
 <div class="ScrollBar dashboard-box-wrapper">
+  <div class="container">
+    <button (click)="modal.show=true" class="button-add">Agregar</button>
+  </div>
 <app-add-user [title]="'Agregar usuario'"  #modal></app-add-user>
 <app-add-user [title]="'Editar Usuario'" [editUser]="this.editUser"  #modalEdit></app-add-user>
 <div >

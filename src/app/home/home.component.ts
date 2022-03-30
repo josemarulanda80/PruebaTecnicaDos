@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
   public initSidebar(){
     this.menusList.push(
       {icono: "Dashboard@PYP.png", nombre: "Dashboard", ruta: '/home/dashboard'},
-      {icono: "Dashboard@PYP.png", nombre: "Lista", ruta: '/home/list'} 
+      {icono: "perfil@PYP.png", nombre: "Lista", ruta: '/home/list'} 
       
       );
   }

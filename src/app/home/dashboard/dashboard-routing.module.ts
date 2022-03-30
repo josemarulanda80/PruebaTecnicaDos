@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      { path: '', component: DashboardComponent }
+      { path: '', component: DashboardComponent },
+      { path: '**', redirectTo: '', pathMatch: 'full'},
     ]
   }];
 

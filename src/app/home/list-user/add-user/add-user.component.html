@@ -13,7 +13,7 @@
             formControlName="email"
             placeholder="mail@address.com"
           />
-          <span *ngIf="user.get('email').hasError('required') && user.get('email').touched" class="text-red">Error al ingresar email</span>
+          <span *ngIf="user.get('email').hasError('required') && user.get('email').touched" class="text-red">Error al ingresar el email</span>
         </div>
         
         <div>
@@ -24,7 +24,7 @@
             name="name"
             placeholder="Nombre"
           />
-          <span *ngIf="user.get('name').hasError('required') && user.get('name').touched" class="text-red">Error al ingresar email</span>
+          <span *ngIf="user.get('name').hasError('required') && user.get('name').touched" class="text-red">Error al ingresar el nombre</span>
         </div>
         <div>
           <label>Username</label>
@@ -34,7 +34,7 @@
             name="username"
             placeholder="Username"
           />
-          <span *ngIf="user.get('username').hasError('required') && user.get('username').touched" class="text-red">Error al ingresar email</span>
+          <span *ngIf="user.get('username').hasError('required') && user.get('username').touched" class="text-red">Error al ingresar el username</span>
         </div>
         <div>
           <label >Telefono</label>
@@ -44,7 +44,7 @@
             name="phone"
             placeholder="Telefono"
           />
-          <span *ngIf="user.get('phone').hasError('required') && user.get('phone').touched" class="text-red">Error al ingresar email</span>
+          <span *ngIf="user.get('phone').hasError('required') && user.get('phone').touched" class="text-red">Error al ingresar el teléfono</span>
         </div>
 
 

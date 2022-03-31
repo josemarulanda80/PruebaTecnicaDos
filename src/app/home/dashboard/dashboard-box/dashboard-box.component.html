@@ -1,13 +1,8 @@
 <div class="dashboard-box-container">
-    <mat-card class="card-style first-card"  (click)="changePanel()">
+    <mat-card class="card-style ">
         <div class="flex-col-container">
-            <div class="campaign-type">
-              <p class="font1" [ngStyle]="{'color': data.color}">{{data.theme}}</p>
-                <div class="icon-container">
-                  <mat-icon class="campaign-type-icon pointer" [svgIcon]="data.themeIcon" [ngStyle]="{'color': 'transparent','stroke': 'white'}"></mat-icon>
-                </div>
-            </div>
-            <div class="card-data-flex" [ngStyle]="{'border-left-color': data.color, 'border-top-color': data.color}">
+         
+            <div class="card-data-flex" >
                 <div class="flex-data-container data-right-border">
                     <div class="data-icon-container">
                         <mat-icon class="data-icon-svg pointer" [svgIcon]="'titulo@PYPGrandes'" [ngStyle]="{'fill': 'transparent','stroke': data.color}"></mat-icon>

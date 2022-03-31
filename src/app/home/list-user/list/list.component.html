@@ -32,11 +32,11 @@
       </ng-container>
 
       <ng-container matColumnDef="Phone">
-        <th mat-header-cell *matHeaderCellDef> <b>Telefono</b> </th>
+        <th mat-header-cell *matHeaderCellDef> <b>Teléfono</b> </th>
         <td mat-cell *matCellDef="let element"> <span class="text-color">{{element.phone}} </span></td>
       </ng-container>
       <ng-container matColumnDef="Editar">
-        <th mat-header-cell *matHeaderCellDef> <b>Editar</b> </th>
+        <th mat-header-cell *matHeaderCellDef> <b>Acciones</b> </th>
         <td mat-cell *matCellDef="let element">
           <div >
           <button  class="button-edit"   (click)="edit(element)"(click)="modalEdit.show=true"   focusable="false">

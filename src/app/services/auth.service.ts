@@ -60,11 +60,12 @@ export class AuthService {
 
 //Valid token diseñado para funcionar y probar las demas funciones de la app
 
-validToken(){
-  if(localStorage.getItem('token')=='QpwL5tke4Pnpja7X4'){
-    return true;
+validToken():Observable<boolean>{
+
+  if(localStorage.getItem('token')){
+    return of(true);
   }else{
-    return false;
+    return of(false);
   }
 
 }

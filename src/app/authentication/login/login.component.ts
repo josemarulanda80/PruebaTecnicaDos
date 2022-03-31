@@ -99,7 +99,7 @@ export class LoginComponent implements OnInit {
         .subscribe(resp =>{
          if(resp){
           this.toastService.info("Iniciando, espere un momento.");
-           this.loginInProgress = true;
+         //  this.loginInProgress = true;
            this.toastService.success(
               "Bienvenido"
             );

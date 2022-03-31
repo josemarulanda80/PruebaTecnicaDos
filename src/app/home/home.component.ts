@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
 
   public async logout() {
     this.toast.success("Sesión cerrada exitosamente");
+    localStorage.clear();
     this.router.navigateByUrl("/");
   }
 }

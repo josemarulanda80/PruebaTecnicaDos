@@ -48,11 +48,10 @@ export class ListComponent implements OnInit {
   deleteUser(userExist:Users){
     let idUser=userExist.id.toString()
     this.userService.deleteUser(idUser).subscribe(()=>{
-      this.toastService.success("Usuario eliminado"),
-      console.log('Usuario eliminado'), this.userService.getUsers().subscribe()
+      this.toastService.success(`Usuario con id: ${userExist.id} eliminado`), this.userService.getUsers().subscribe()
     },
-    error=>{console.log(error), this.toastService.error(
-      "El elemento no pudo ser eliminado",
+    error=>{ this.toastService.error(
+      `El elemento con id: ${userExist.id} no pudo ser eliminado`,
       "Error"
     );})
 

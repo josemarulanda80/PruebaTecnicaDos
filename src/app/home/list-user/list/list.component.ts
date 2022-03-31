@@ -41,7 +41,7 @@ export class ListComponent implements OnInit {
   // it add  the value user to edit
   edit(userExist:Users) {
    
-    console.log(userExist)
+
     this.editUser=userExist
 
   }

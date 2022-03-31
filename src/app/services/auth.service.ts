@@ -32,6 +32,11 @@ export class AuthService {
     const body={email,password}
     return this.http.post<authResponse>(this.baseUrl,body)
     .pipe(
+      tap( resp=>{
+        if(resp){
+          localStorage.setItem('token',resp.token);
+        }
+      }),
       map (resp => true),
       catchError(err=>of(err.error.msg))
 

@@ -105,6 +105,12 @@ export class LoginComponent implements OnInit {
             );
            this.router.navigateByUrl("/home/dashboard");
 
+         }else{
+          this.toastService.error(
+            "Revise sus credenciales e intente de nuevo",
+            "Error"
+          );
+
          }
         })
         // this.loginInProgress = true;

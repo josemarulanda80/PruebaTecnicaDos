@@ -33,7 +33,7 @@ export class AuthService {
     return this.http.post<authResponse>(this.baseUrl,body)
     .pipe(
       map (resp => true),
-      catchError(err=>of(false))
+      catchError(err=>of(err.error.msg))
 
     )
     

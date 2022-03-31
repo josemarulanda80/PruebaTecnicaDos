@@ -1,8 +1,8 @@
 import { CdkObserveContent } from '@angular/cdk/observers';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { Users } from 'src/app/interfaces/list.item.types';
+import { ToastService } from 'src/app/services/toast.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class AddUserComponent implements OnInit {
   id:number | string;
 
   public show = false;
-  constructor(private userServices: UsersService) { }
+  constructor(private userServices: UsersService,private toastService: ToastService) { }
   createForm() {
     this.user = new FormGroup({
       email: new FormControl("", [Validators.required, Validators.email]),
@@ -46,8 +46,11 @@ export class AddUserComponent implements OnInit {
    if(this.title =='Agregar usuario'){
   
     this.userServices.saveUSer(newUser).subscribe(() =>
-      {console.log('Usuario Creado'),this.userServices.getUsers().subscribe(),this.exit()},
-      error => {console.log('oops', error)});
+      { this.toastService.success("Usuario Creado"),console.log('Usuario Creado'),this.userServices.getUsers().subscribe(),this.exit()},
+      error => {console.log('oops', error), this.toastService.error(
+        "El elemento no pudo ser eliminado",
+        "Error"
+      )});
    }else{
      this.id=this.editUser.id.toString();
      this.userServices.editUSer(newUser,this.id).subscribe(()=>

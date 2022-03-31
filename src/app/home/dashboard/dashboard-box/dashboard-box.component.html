@@ -64,13 +64,5 @@
         </div>
     </mat-card>
 
-    <div class="single-data-container" *ngIf="expanded">
-        <div *ngFor="let expandableData of data.expandableData; let i = index" class="data-card">
-            <mat-card class="flex-card card-style">
-                <mat-icon class="data-icon-svg pointer w-30" [svgIcon]="expandableData.icon" [ngStyle]="{'fill': 'transparent','stroke': data.color}"></mat-icon>
-                <p class="font4">{{expandableData.label}}</p>
-                <p class="font5">{{expandableData.value}}</p>
-            </mat-card>
-        </div>
-    </div>
+
 </div>

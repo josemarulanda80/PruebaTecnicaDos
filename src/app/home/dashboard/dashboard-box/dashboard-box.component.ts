@@ -10,17 +10,11 @@ import { DashboardComponent } from "../dashboard.component";
 export class DashboardBoxComponent implements OnInit {
   @Input() public data: DashboardItem;
   @Input() public mainRef: DashboardComponent;
-  public expanded = false;
+
 
   constructor() {}
 
   public ngOnInit(): void {
   }
 
-  /**
-   * changePanel
-   */
-  public changePanel() {
-    this.expanded = !this.expanded;
-  }
 }

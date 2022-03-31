@@ -18,6 +18,26 @@
     color: white;
     vertical-align: middle;
   }
+  
+
+.modalc{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  background: rgba(0,0,0,0.75);
+  align-items: center;
+  display: flex;
+ justify-content: center;
+ overflow-y: auto;
+ z-index: 99999;
+}
+
+.text-red{
+  color:#f51212;
+}
 
   // 4: VISA, 51 -> 55: MasterCard, 36-38-39: DinersClub, 34-37: American Express, 65: Discover, 5019: dankort
 
@@ -156,23 +176,3 @@ input {
   width: 100%;
 }
 
-
-
-.modalc{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 16px;
-  background: rgba(0,0,0,0.75);
-  align-items: center;
-  display: flex;
- justify-content: center;
- overflow-y: auto;
- z-index: 99999;
-}
-
-.text-red{
-  color:#f51212;
-}

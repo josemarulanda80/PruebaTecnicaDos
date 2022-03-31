@@ -1,5 +1,6 @@
 // your variables here
 export const environment = {
   production: false,
-  api: ""
+  api: "",
+  baseUrl:'https://reqres.in/api/login'
 };

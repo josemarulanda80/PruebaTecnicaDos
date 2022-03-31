@@ -1,3 +1,4 @@
+import { CdkObserveContent } from "@angular/cdk/observers";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -92,18 +93,24 @@ export class LoginComponent implements OnInit {
         if (this.loginInProgress) {
           return;
         }
-        this.loginInProgress = true;
-        this.toastService.info("Iniciando, espere un momento.");
-        const user = this.form.value["user"];
-        const password = this.form.value["password"];
-        localStorage.setItem("RememberMe", this.rememberUser ? "true" : "false");
-        // validate credentials
-        //
-        this.toastService.success(
-          "Bienvenido '" + this.authService.getNames({firstName: true, lastName: true}) + "'",
-          "Exito"
-        );
-        this.router.navigateByUrl("/home/dashboard");
+        const {user,password}=this.form.value
+        console.log(user,password)
+        this.authService.login(user,password)
+        .subscribe(resp =>{
+          console.log(resp)
+        })
+        // this.loginInProgress = true;
+        // this.toastService.info("Iniciando, espere un momento.");
+        // const user = this.form.value["user"];
+        // const password = this.form.value["password"];
+        // localStorage.setItem("RememberMe", this.rememberUser ? "true" : "false");
+        // // validate credentials
+        // //
+        // this.toastService.success(
+        //   "Bienvenido '" + this.authService.getNames({firstName: true, lastName: true}) + "'",
+        //   "Exito"
+        // );
+        // this.router.navigateByUrl("/home/dashboard");
       }
     } catch (e) {
       console.log(e);

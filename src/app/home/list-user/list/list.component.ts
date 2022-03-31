@@ -3,6 +3,7 @@ import { Users } from 'src/app/interfaces/list.item.types';
 import { UsersService } from 'src/app/services/users.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-list',
@@ -12,7 +13,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ListComponent implements OnInit {
   @ViewChild("myModal") myModal: ElementRef;
 
-  error: boolean = false;
+
   editUser:Users;
   ELEMENT_DATA!: Users[];
   displayedColumns: string[] = ['Id', 'Name', 'Username', 'Email', 'Phone', 'Editar'];
@@ -24,7 +25,8 @@ export class ListComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor(private userService: UsersService) {
+      
+    constructor(private userService: UsersService,private toastService: ToastService) {
     this.getAllUsers()
   }
 
@@ -33,10 +35,7 @@ export class ListComponent implements OnInit {
   }
 
   public getAllUsers() {
-    this.userService.getUsers().subscribe(report => this.dataSource.data = report as Users[]), err => {
-      this.error == true;
-      console.log(err);
-    }
+    this.userService.getUsers().subscribe(report => this.dataSource.data = report as Users[])
   }
 
   // it add  the value user to edit
@@ -49,9 +48,15 @@ export class ListComponent implements OnInit {
   deleteUser(userExist:Users){
     let idUser=userExist.id.toString()
     this.userService.deleteUser(idUser).subscribe(()=>{
-      console.log('Usuario eliminado'), this.userService.getUsers().subscribe()
+      this.toastService.success("Usuario eliminado");
+      console.log('Usuario eliminado'), this.userService.getUsers().subscribe(
+
+      )
     },
-    error=>{console.log(error), this.error=true})
+    error=>{console.log(error), this.toastService.error(
+      "El elemento no pudo ser eliminado",
+      "Error"
+    );})
 
   }
 

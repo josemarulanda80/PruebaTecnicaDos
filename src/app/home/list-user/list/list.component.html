@@ -5,7 +5,7 @@
   </div>
 <app-add-user [title]="'Agregar usuario'"  #modal></app-add-user>
 <app-add-user [title]="'Editar Usuario'" [editUser]="this.editUser"  #modalEdit></app-add-user>
-<div >
+<div>
     <table mat-table [dataSource]="dataSource">
 
       <ng-container matColumnDef="Id">
@@ -57,7 +57,4 @@
                  >
     </mat-paginator>
   </div>
-  <div class="alerta" *ngIf="error">
-    X Se presento un error
-    </div>
   </div>

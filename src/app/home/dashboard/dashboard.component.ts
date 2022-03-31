@@ -15,7 +15,8 @@ import { ToastService } from "../../services/toast.service";
 })
 export class DashboardComponent implements OnInit {
   users:Users[]=[]
-  public elements: DashboardItem[] = [];
+  //public elements: DashboardItem[] = [];
+  elements:Users[]=[]
   public loading = false;
   public ngxLoadingAnimationTypes = {
     chasingDots: "chasing-dots",
@@ -39,7 +40,7 @@ export class DashboardComponent implements OnInit {
 
 
   public ngOnInit() {
-    this.getData().then();
+    //this.getData().then();
     this.getDataUser()
   }
 
@@ -48,22 +49,22 @@ export class DashboardComponent implements OnInit {
    */
   getDataUser(){
     this.userUsuario.getUsers().subscribe((data)=>{
-      this.users=data,
+      this.elements=data,
       console.log(this.users)
       
     })
   }
-  public async getData() {
-    try {
-      this.loading = true;
-      this.elements = await this.dashboardService.getNewDashboardData();
-      console.log(this.elements)
-      this.loading = false;
-    } catch (e) {
-      console.log(e);
-      this.toast.error(
-        "No se pudieron obtener los indicadores del dashboard, revise su conexión"
-      );
-    }
-  }
+  // public async getData() {
+  //   try {
+  //     this.loading = true;
+  //     this.elements = await this.dashboardService.getNewDashboardData();
+  //     console.log(this.elements)
+  //     this.loading = false;
+  //   } catch (e) {
+  //     console.log(e);
+  //     this.toast.error(
+  //       "No se pudieron obtener los indicadores del dashboard, revise su conexión"
+  //     );
+  //   }
+  // }
 }

@@ -5,59 +5,59 @@
             <div class="card-data-flex" >
                 <div class="flex-data-container data-right-border">
                     <div class="data-icon-container">
-                        <mat-icon class="data-icon-svg pointer" [svgIcon]="'titulo@PYPGrandes'" [ngStyle]="{'fill': 'transparent','stroke': data.color}"></mat-icon>
+                        <mat-icon class="data-icon-svg pointer" [svgIcon]="'titulo@PYPGrandes'" [ngStyle]="{'fill': 'transparent','stroke':'#9469AD'}"></mat-icon>
                     </div>
                     <div class="data-col tooltip w-80" >
-                        <p class="font2" [ngStyle]="{'color': data.color}">Titulo de campaña</p>
-                        <p class="font3 shorten">{{ data.campaignTitle }}</p>
-                        <span class="tooltiptext">{{ data.campaignTitle  }}</span>
+                        <p class="font2" [ngStyle]="{'color': '#9469AD'}">Nombre de la compania</p>
+                        <p class="font3 shorten">{{ data.company.name }}</p>
+                        <span class="tooltiptext">{{ data.company.name  }}</span>
                     </div>
                 </div>
                 <div class="flex-data-container">
                     <div class="w-20">
-                        <mat-icon class="data-icon-svg pointer" [svgIcon]="'Tipo@PYPGrandes'" [ngStyle]="{'color': 'transparent','stroke': data.color}"></mat-icon>
+                        <mat-icon class="data-icon-svg pointer" [svgIcon]="'Tipo@PYPGrandes'" [ngStyle]="{'color': 'transparent','stroke': '#9469AD'}"></mat-icon>
                     </div>
                     <div class="data-col w-80" >
-                        <p class="font2 m-2" [ngStyle]="{'color': data.color}">Tipo de la campaña</p>
-                        <p class="font3 shorten">{{ data.campaignType }}</p>
+                        <p class="font2 m-2" [ngStyle]="{'color': '#9469AD'}">Nombre usuario</p>
+                        <p class="font3 shorten">{{ data.name }}</p>
                     </div>
                 </div>
                 <div class="flex-data-container data-center-row data-right-border">
                     <div class="w-20">
-                        <mat-icon class="data-icon-svg pointer" [svgIcon]="'Estatus@PYPGrandes'" [ngStyle]="{'fill': data.color,'stroke': 'transparent'}"></mat-icon>
+                        <mat-icon class="data-icon-svg pointer" [svgIcon]="'sms_1@PYPGrandes'" [ngStyle]="{'fill': '#9469AD','stroke': 'transparent'}"></mat-icon>
                     </div>
                     <div class="data-col w-80" >
-                        <p class="font2 no-margin" [ngStyle]="{'color': data.color}">Estatus de campaña</p>
-                        <p class="font3 shorten">{{ data.status }}</p>
+                        <p class="font2 no-margin" [ngStyle]="{'color':'#9469AD'}">Email</p>
+                        <p class="font3 shorten">{{ data.email }}</p>
                     </div>
                 </div>
                 <div class="flex-data-container data-center-row">
                     <div class="w-20">
-                      <mat-icon class="data-icon-svg pointer" [svgIcon]="'usuariosImpactados@PYPGrandes'" [ngStyle]="{'fill': data.color,'stroke': 'transparent'}"></mat-icon>
+                      <mat-icon class="data-icon-svg pointer" [svgIcon]="'usuariosImpactados@PYPGrandes'" [ngStyle]="{'fill': '#9469AD','stroke': 'transparent'}"></mat-icon>
                     </div>
                     <div class="data-col w-80" >
-                        <p class="font2 m-2" [ngStyle]="{'color': data.color}">Número de usuarios impactados</p>
-                        <p class="font3 shorten" >{{ data.impactedUsers }}</p>
+                        <p class="font2 m-2" [ngStyle]="{'color': '#9469AD'}">Sitio web</p>
+                        <p class="font3 shorten" >{{ data.website }}</p>
                     </div>
                 </div>
                 <div class="flex-data-container data-right-border">
                     <div class="w-20">
-                      <mat-icon class="data-icon-svg pointer" [svgIcon]="'Fecha@PYPGrandes'" [ngStyle]="{'fill': data.color,'stroke': 'transparent'}"></mat-icon>
+                      <mat-icon class="data-icon-svg pointer" [svgIcon]="'Campanas_1@PYPGrandes'" [ngStyle]="{'fill': '#9469AD','stroke': 'transparent'}"></mat-icon>
                     </div>
                     <div class="data-col tooltip w-80" >
-                        <p class="font2" [ngStyle]="{'color': data.color}" >Fecha y hora de creación</p>
-                        <p class="font3 shorten"> {{ data.creationDate | date:'dd/MM/yyyy - h:mm a'}}</p>
-                        <span class="tooltiptext">{{ data.creationDate | date:'dd/MM/yyyy - h:mm a' }}</span>
+                        <p class="font2" [ngStyle]="{'color': '#9469AD'}" >Ciudad</p>
+                        <p class="font3 shorten"> {{ data.address.city }}</p>
+                        
                     </div>
                 </div>
                 <div class="flex-data-container">
                     <div class="w-20">
-                        <mat-icon class="data-icon-svg pointer" [svgIcon]="'Fecha@PYPGrandes'" [ngStyle]="{'fill': data.color,'stroke': 'transparent'}"></mat-icon>
+                        <mat-icon class="data-icon-svg pointer" [svgIcon]="'llamadas_1@PYPGrandes'" [ngStyle]="{'fill': '#9469AD','stroke': 'transparent'}"></mat-icon>
                     </div>
                     <div class="data-col tooltip w-80" >
-                        <p class="font2" [ngStyle]="{'color': data.color}" >Fecha y hora de envío</p>
-                        <p class="font3 shorten">{{ data.sendDate | date:'dd/MM/yyyy - h:mm a'}}</p>
-                        <span class="tooltiptext">{{ data.sendDate | date:'dd/MM/yyyy - h:mm a' }}</span>
+                        <p class="font2" [ngStyle]="{'color': '#9469AD'}" >Telefono</p>
+                        <p class="font3 shorten">{{ data.phone }}</p>
+                        
                     </div>
                 </div>
             </div>

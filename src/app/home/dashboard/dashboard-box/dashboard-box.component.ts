@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { Users } from "src/app/interfaces/list.item.types";
 import { DashboardItem } from "../../../interfaces/dashboard.item.type";
 import { DashboardComponent } from "../dashboard.component";
 
@@ -8,7 +9,7 @@ import { DashboardComponent } from "../dashboard.component";
   styleUrls: ["./dashboard-box.component.css"],
 })
 export class DashboardBoxComponent implements OnInit {
-  @Input() public data: DashboardItem;
+  @Input() public data: Users;
   @Input() public mainRef: DashboardComponent;
 
 

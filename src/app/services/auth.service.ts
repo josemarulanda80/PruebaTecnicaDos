@@ -1,10 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { User } from "../interfaces/user.type";
 import { catchError, map, tap } from "rxjs/operators";
 import { authResponse } from '../interfaces/authResponse.types';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +44,30 @@ export class AuthService {
     
   }
 
+// Valid token si la APi me permitiera comporbar el token 
+// validToken():Observable<boolean>{
+//   const headers = new HttpHeaders()
+//   .set('x-token',localStorage.getItem('token')||'');
+//   return this.http.get<authResponse>(this.baseUrl,{headers}).
+//   pipe(
+//     map(resp=>{
+//       return resp;
+//     }),
+//     catchError((err)=>of(false))
+//   );
+  
+// }
+
+//Valid token diseñado para funcionar y probar las demas funciones de la app
+
+validToken(){
+  if(localStorage.getItem('token')=='QpwL5tke4Pnpja7X4'){
+    return true;
+  }else{
+    return false;
+  }
+
+}
   public getNames(names: {firstName?: boolean, secondName?: boolean, lastName?: boolean, secondLastName?: boolean}){
     // tslint:disable-next-line:prefer-const
     let output = [];

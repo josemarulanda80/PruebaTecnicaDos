@@ -11,6 +11,7 @@ export class ValidarTokenGuard implements CanActivate, CanLoad {
   constructor(private authService:AuthService, private router:Router){
 
   }
+  // Active route user authorized
   canActivate():Observable<boolean>|boolean{
     console.log('canActivate')
    return this.authService.validToken()

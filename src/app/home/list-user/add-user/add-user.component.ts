@@ -14,10 +14,11 @@ export class AddUserComponent implements OnInit {
   @Input() title: string = '';
   @Input() editUser: Users;
   user: FormGroup;
-  id:number | string;
+  id: number | string;
 
   public show = false;
-  constructor(private userServices: UsersService,private toastService: ToastService) { }
+  constructor(private userServices: UsersService, private toastService: ToastService) { }
+
   createForm() {
     this.user = new FormGroup({
       email: new FormControl("", [Validators.required, Validators.email]),
@@ -29,45 +30,49 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
     this.createForm();
   }
-  
+  // show model
   showModel() {
     this.show = true;
   }
+  // exit model
   hideModel() {
     this.show = false;
   }
   createOrEditUser() {
+    // Create user with information of form 
     const newUser: Users = {
       email: this.user.get("email")?.value,
       name: this.user.get("name")?.value,
       username: this.user.get("username")?.value,
       phone: this.user.get('phone')?.value
     };
-   if(this.title =='Agregar usuario'){
-  
-    this.userServices.saveUSer(newUser).subscribe(() =>
-      { this.toastService.success("Usuario Creado"),console.log('Usuario Creado'),this.userServices.getUsers().subscribe(),this.exit()},
-      error => {console.log('oops', error), this.toastService.error(
-        "El elemento no pudo ser eliminado",
-        "Error"
-      )});
-   }else{
-     this.id=this.editUser.id.toString();
-     this.userServices.editUSer(newUser,this.id).subscribe(()=>
-     {this.toastService.success(`Usuario con id : ${this.id} editado`),this.userServices.getUsers().subscribe(),this.exit()},
-     error =>{ this.toastService.error(
-      `El elemento con id: ${this.id} no pudo ser editado`,
-      "Error"
-    )});
-   }
+    if (this.title == 'Agregar usuario') {
+
+      this.userServices.saveUSer(newUser).subscribe(() => { this.toastService.success("Usuario Creado"), console.log('Usuario Creado'), this.userServices.getUsers().subscribe(), this.exit() },
+        error => {
+          console.log('oops', error), this.toastService.error(
+            "El elemento no pudo ser eliminado",
+            "Error"
+          )
+        });
+    } else {
+      this.id = this.editUser.id.toString();
+      this.userServices.editUSer(newUser, this.id).subscribe(() => { this.toastService.success(`Usuario con id : ${this.id} editado`), this.userServices.getUsers().subscribe(), this.exit() },
+        error => {
+          this.toastService.error(
+            `El elemento con id: ${this.id} no pudo ser editado`,
+            "Error"
+          )
+        });
+    }
   }
+
+  // funtion exit modal and to format form
   exit() {
     this.user.reset()
     this.show = false;
 
   }
-
-
   //Función con la que trate llamar la información del usuario a editar pero no me funciona, la alternativa que usaria es implementar un store(ngrx) para tener un mejor manejo del flujo información
   // showInformationUserEdit(){
   //   this.user.patchValue({

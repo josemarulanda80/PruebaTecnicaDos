@@ -1,63 +1,94 @@
 <ng-container *ngIf="show">
- <div class="align">
-  <div class="modalc">
-    <div class="add">
-      <header class="add__header">
-        <h2>{{title}}</h2>
-      </header>
-      <form [formGroup]="user" class="add__form" (ngSubmit)="createOrEditUser()">
-        <div>
-          <label for="email">Email</label>
-          <input
-            type="email"
-            formControlName="email"
-            placeholder="mail@address.com"
-          />
-          <span *ngIf="user.get('email').hasError('required') && user.get('email').touched" class="text-red">Error al ingresar el email</span>
-        </div>
-        
-        <div>
-          <label>Nombre</label>
-          <input
-            type="text"
-            formControlName="name"
-            name="name"
-            placeholder="Nombre"
-          />
-          <span *ngIf="user.get('name').hasError('required') && user.get('name').touched" class="text-red">Error al ingresar el nombre</span>
-        </div>
-        <div>
-          <label>Username</label>
-          <input
-            type="text"
-            formControlName="username"
-            name="username"
-            placeholder="Username"
-          />
-          <span *ngIf="user.get('username').hasError('required') && user.get('username').touched" class="text-red">Error al ingresar el username</span>
-        </div>
-        <div>
-          <label >Telefono</label>
-          <input
-            type="number"
-            formControlName="phone"
-            name="phone"
-            placeholder="Telefono"
-          />
-          <span *ngIf="user.get('phone').hasError('required') && user.get('phone').touched" class="text-red">Error al ingresar el teléfono</span>
-        </div>
+  <div class="align">
+    <div class="modalc">
+      <div class="add">
+        <header class="add__header">
+          <h2>{{ title }}</h2>
+        </header>
+        <form
+          [formGroup]="user"
+          class="add__form"
+          (ngSubmit)="createOrEditUser()"
+        >
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="mail@address.com"
+            />
+            <span
+              *ngIf="
+                user.get('email').hasError('required') &&
+                user.get('email').touched
+              "
+              class="text-red"
+              >Error al ingresar el email</span
+            >
+          </div>
 
+          <div>
+            <label>Nombre</label>
+            <input
+              type="text"
+              formControlName="name"
+              name="name"
+              placeholder="Nombre"
+            />
+            <span
+              *ngIf="
+                user.get('name').hasError('required') &&
+                user.get('name').touched
+              "
+              class="text-red"
+              >Error al ingresar el nombre</span
+            >
+          </div>
+          <div>
+            <label>Username</label>
+            <input
+              type="text"
+              formControlName="username"
+              name="username"
+              placeholder="Username"
+            />
+            <span
+              *ngIf="
+                user.get('username').hasError('required') &&
+                user.get('username').touched
+              "
+              class="text-red"
+              >Error al ingresar el username</span
+            >
+          </div>
+          <div>
+            <label>Telefono</label>
+            <input
+              type="number"
+              formControlName="phone"
+              name="phone"
+              placeholder="Telefono"
+            />
+            <span
+              *ngIf="
+                user.get('phone').hasError('required') &&
+                user.get('phone').touched
+              "
+              class="text-red"
+              >Error al ingresar el teléfono</span
+            >
+          </div>
 
-        <div class="container">
-          <button class="button-exit"  (click)="exit()">Salir</button>
-          <button   class="button-add" [disabled]="user.invalid" type="submit">Aceptar</button>
-        </div>
+          <div class="container">
+            <button class="button-exit" (click)="exit()">Salir</button>
+            <button class="button-add" [disabled]="user.invalid" type="submit">
+              Aceptar
+            </button>
+          </div>
+        </form>
+      </div>
 
-      
-      </form>
+      <div class="modalc-container"></div>
     </div>
-
-    <div class="modalc-container"></div>
   </div>
- </div>
 </ng-container>

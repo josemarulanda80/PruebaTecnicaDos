@@ -27,7 +27,7 @@ export class ListComponent implements OnInit {
 
       
     constructor(private userService: UsersService,private toastService: ToastService) {
-    this.getAllUsers()
+
   }
 
   ngOnInit() {

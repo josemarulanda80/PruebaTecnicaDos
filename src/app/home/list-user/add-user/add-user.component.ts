@@ -29,6 +29,7 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
     this.createForm();
   }
+  
   showModel() {
     this.show = true;
   }

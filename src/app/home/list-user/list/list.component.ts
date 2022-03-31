@@ -38,6 +38,8 @@ export class ListComponent implements OnInit {
       console.log(err);
     }
   }
+
+  // it add  the value user to edit
   edit(userExist:Users) {
    
     console.log(userExist)

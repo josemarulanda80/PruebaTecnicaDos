@@ -54,7 +54,7 @@ export class AddUserComponent implements OnInit {
    }else{
      this.id=this.editUser.id.toString();
      this.userServices.editUSer(newUser,this.id).subscribe(()=>
-     {console.log('Usuario Editado'),this.userServices.getUsers().subscribe(),this.exit()},
+     {this.toastService.success(`Usuario con id : ${this.id} editado`),this.userServices.getUsers().subscribe(),this.exit()},
      error =>{console.log('Error',error)});
    }
   }

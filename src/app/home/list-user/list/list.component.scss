@@ -2,7 +2,7 @@ $color-red: #9469AD;
 table {
   width: 100%;
   height: 100%;
-  border-collapse: separate;
+ 
   border: solid black 1px;
   color: #fff;
   border-radius: 10px;
@@ -10,7 +10,7 @@ table {
   -webkit-border-radius: 5px;
   background-image: linear-gradient(-90deg, #09096e, #00234e);
   box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.55);
-  overflow-x:auto
+  
   
   
 }

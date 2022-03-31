@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { User } from "../interfaces/user.type";
+import { catchError, map, tap } from "rxjs/operators";
+import { authResponse } from '../interfaces/authResponse.types';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +12,7 @@ import { User } from "../interfaces/user.type";
 export class AuthService {
 
   private baseUrl: string=environment.baseUrl;
+
 
   private _authenticatedUser: User = {
     active: true,
@@ -26,7 +30,12 @@ export class AuthService {
   
   public login(email:string,password:string){
     const body={email,password}
-    return this.http.post(this.baseUrl,body);
+    return this.http.post<authResponse>(this.baseUrl,body)
+    .pipe(
+      map (resp => true),
+      catchError(err=>of(false))
+
+    )
     
   }
 

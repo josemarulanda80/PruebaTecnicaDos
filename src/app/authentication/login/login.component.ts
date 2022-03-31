@@ -97,7 +97,15 @@ export class LoginComponent implements OnInit {
         console.log(user,password)
         this.authService.login(user,password)
         .subscribe(resp =>{
-          console.log(resp)
+         if(resp){
+          this.toastService.info("Iniciando, espere un momento.");
+           this.loginInProgress = true;
+           this.toastService.success(
+              "Bienvenido"
+            );
+           this.router.navigateByUrl("/home/dashboard");
+
+         }
         })
         // this.loginInProgress = true;
         // this.toastService.info("Iniciando, espere un momento.");
